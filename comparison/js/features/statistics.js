@@ -5,7 +5,8 @@ import { domElements } from '../core/domElements.js';
 import { getDocumentA, getDocumentB } from '../core/state.js';
 import { 
   calculateDocumentStats, 
-  renderStats
+  renderStats,
+  downloadStatisticsJSON
 } from '../../../shared/statistics.js';
 
 /**
@@ -59,43 +60,9 @@ function downloadStatistics(side) {
     return;
   }
   
-  const stats = calculateDocumentStats(doc.htmlContent, doc.labels);
-  
-  // Build detailed statistics object
-  const exportData = {
-    documentName: doc.filename || `document_${side}`,
-    exportDate: new Date().toISOString(),
-    totalLabels: stats.totalLabels,
-    labelParents: stats.labelTree.length,
-    labels: stats.labelTree.map(parent => {
-      return {
-        name: parent.name,
-        color: parent.color,
-        manual: parent.manual,
-        auto: parent.auto,
-        total: parent.total,
-        sublabels: parent.children.map(child => ({
-          name: child.name,
-          color: child.color,
-          manual: child.manual,
-          auto: child.auto,
-          total: child.total
-        }))
-      };
-    })
-  };
-  
-  // Create and trigger download
-  const dataStr = JSON.stringify(exportData, null, 2);
-  const dataBlob = new Blob([dataStr], { type: 'application/json' });
-  const url = URL.createObjectURL(dataBlob);
-  const link = document.createElement('a');
-  link.href = url;
-  link.download = `${(doc.filename || `document_${side}`).replace('.html', '')}_statistics.json`;
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-  URL.revokeObjectURL(url);
+  // Use the shared downloadStatisticsJSON function
+  const filename = doc.filename || `document_${side}.html`;
+  downloadStatisticsJSON(doc, filename);
 }
 
 /**

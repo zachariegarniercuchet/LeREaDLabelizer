@@ -78,9 +78,9 @@
 }
 
 .stats-download-btn {
-  background: var(--accent);
-  border: none;
-  color: white;
+  background: transparent !important;
+  border: 1px solid var(--hover);
+  color: var(--accent);
   font-size: 20px;
   cursor: pointer;
   width: 36px;
@@ -92,22 +92,24 @@
   transition: all 0.2s ease;
   padding: 0;
   line-height: 1;
+  box-shadow: none !important;
 }
 
 .stats-download-btn .download-icon {
   width: 20px;
   height: 20px;
   display: block;
+  filter: brightness(0) saturate(100%) invert(57%) sepia(79%) saturate(1230%) hue-rotate(200deg);
 }
 
 .stats-download-btn:hover {
-  background: #5a8fff;
+  background: rgba(106, 163, 255, 0.1) !important;
   transform: translateY(-1px);
 }
 
 .stats-close-btn {
-  background: none;
-  border: none;
+  background: transparent !important;
+  border: 1px solid var(--hover) !important;
   color: var(--sub);
   font-size: 28px;
   cursor: pointer;
@@ -120,11 +122,13 @@
   transition: all 0.2s ease;
   padding: 0;
   line-height: 1;
+  box-shadow: none !important;
 }
 
 .stats-close-btn:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.1) !important;
   color: var(--text);
+  transform: translateY(-1px);
 }
 
 /* Modal Body */
