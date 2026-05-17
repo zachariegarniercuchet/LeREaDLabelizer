@@ -62,6 +62,11 @@ button:hover {
   border-color: #20c997 !important;
 }
 
+/* Force white icon on blue settings button - work with the black icon on white bg */
+.app-header .settings-btn .settings-icon {
+  filter: invert(1) !important;
+}
+
 button:disabled {
   opacity: 0.5;
   cursor: not-allowed;

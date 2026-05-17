@@ -11,6 +11,12 @@
   <link rel="stylesheet" href="../shared/settings-modal.css">
   <link rel="stylesheet" href="../shared/statistics.css">
   <style>
+    /* Override common.css height restriction for sticky positioning */
+    html, body {
+      height: 100vh !important;
+      overflow: hidden !important;
+    }
+
     /* Project Overview Specific Styles */
     body {
       background: linear-gradient(180deg, var(--bg), #060913 60%);
@@ -18,7 +24,6 @@
       font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
       line-height: 1.6;
       transition: background 0.3s ease, color 0.3s ease;
-      min-height: 100vh;
       display: flex;
       flex-direction: column;
     }
