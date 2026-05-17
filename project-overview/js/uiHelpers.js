@@ -88,16 +88,25 @@ function initializeFullscreen() {
     }
   }
 
-  // Handle fullscreen changes
-  document.addEventListener('fullscreenchange', function() {
+  // Update fullscreen button icon based on fullscreen state
+  function updateFullscreenIcon() {
     if (fullscreenBtn) {
-      if (document.fullscreenElement) {
-        fullscreenBtn.title = 'Exit Full Screen (F11 or Esc)';
-      } else {
-        fullscreenBtn.title = 'Full Screen (F11 or Esc to exit)';
+      const icon = fullscreenBtn.querySelector('.fullscreen-icon');
+      if (icon) {
+        if (document.fullscreenElement || document.webkitFullscreenElement) {
+          icon.src = '../assets/icons-exit-full-screen.png';
+          fullscreenBtn.title = 'Exit Full Screen (Esc)';
+        } else {
+          icon.src = '../assets/icons-full-screen.png';
+          fullscreenBtn.title = 'Full Screen (F11 or Esc to exit)';
+        }
       }
     }
-  });
+  }
+
+  // Listen for fullscreen changes
+  document.addEventListener('fullscreenchange', updateFullscreenIcon);
+  document.addEventListener('webkitfullscreenchange', updateFullscreenIcon); // Safari
 }
 
 // ============================================

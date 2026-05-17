@@ -73,23 +73,21 @@
       z-index: 100;
     }
 
-    /* Icon Buttons */
-    .fullscreen-btn,
-    .docs-btn,
-    .settings-btn {
+    /* Icon Buttons - Match Labelizer sizing */
+    .control-group .fullscreen-btn,
+    .control-group .docs-btn,
+    .control-group .settings-btn {
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 8px;
-      min-width: 40px;
-      height: 40px;
+      padding: 6px 10px !important;
     }
 
     .fullscreen-icon,
     .docs-icon,
     .settings-icon {
-      width: 18px;
-      height: 18px;
+      width: 16px;
+      height: 16px;
       filter: brightness(0) invert(1);
     }
 
@@ -100,43 +98,16 @@
       filter: brightness(0) invert(1);
     }
 
-    button {
-      border: 1px solid var(--hover);
-      background: var(--muted);
-      color: var(--text);
-      padding: 10px 16px;
-      border-radius: 12px;
-      cursor: pointer;
-      box-shadow: var(--shadow);
-      font-size: 14px;
-      font-weight: 500;
-      transition: all 0.2s ease;
+    /* Override settings button to use accent color */
+    .control-group .settings-btn {
+      background: var(--accent) !important;
+      color: white !important;
+      border: none !important;
     }
 
-    button:hover {
-      filter: brightness(1.15);
-      background: var(--hover);
-    }
-
-    .app-header button {
-      background: #152043 !important;
-      border: 1px solid #1e2a49 !important;
-      color: #e7ecff !important;
-    }
-
-    .app-header button:hover {
-      background: #1e2a49 !important;
-      border-color: #6aa3ff !important;
-    }
-
-    .app-header .settings-btn {
-      background: #6aa3ff !important;
-      border: 1px solid #6aa3ff !important;
-    }
-
-    .app-header .settings-btn:hover {
-      background: #20c997 !important;
-      border-color: #20c997 !important;
+    .control-group .settings-btn:hover {
+      background: var(--accent-2) !important;
+      border: none !important;
     }
 
     /* Layout similar to docs */
@@ -1176,15 +1147,17 @@
       </a>
     </div>
     <div class="controls">
-      <button id="fullscreen-btn" class="fullscreen-btn" title="Full Screen (F11 or Esc to exit)">
-        <img src="../assets/icons-full-screen.png" alt="Full Screen" class="fullscreen-icon">
-      </button>
-      <button onclick="window.open('../docs/index.html', '_blank')" class="docs-btn" title="Documentation">
-        <img src="../assets/file.png" alt="Documentation" class="docs-icon">
-      </button>
-      <button id="settings-btn" class="settings-btn" title="Settings">
-        <img src="../assets/setting.png" alt="Settings" class="settings-icon">
-      </button>
+      <div class="control-group app-controls">
+        <button id="fullscreen-btn" class="fullscreen-btn" title="Full Screen (F11 or Esc to exit)">
+          <img src="../assets/icons-full-screen.png" alt="Full Screen" class="fullscreen-icon">
+        </button>
+        <button onclick="window.open('../docs/index.html', '_blank')" class="docs-btn" title="Documentation">
+          <img src="../assets/file.png" alt="Documentation" class="docs-icon">
+        </button>
+        <button id="settings-btn" class="settings-btn" title="Settings">
+          <img src="../assets/setting.png" alt="Settings" class="settings-icon">
+        </button>
+      </div>
     </div>
   </div>
 
