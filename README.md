@@ -2,13 +2,13 @@
 
 **A powerful web-based tool for semantic annotation of HTML documents with hierarchical labels, advanced pattern matching, and coreference resolution.**
 
-👉 **[Use it now - No installation required](https://zachariegarniercuchet.github.io/HTMLLabelizer/)**
+👉 **[Use it now - No installation required](https://zachariegarniercuchet.github.io/LeREaDLabelizer/)**
 
 ---
 
 ## 🚀 Quick Start
 
-1. **Open the app** at [https://zachariegarniercuchet.github.io/HTMLLabelizer/](https://zachariegarniercuchet.github.io/HTMLLabelizer/)
+1. **Open the app** at [https://zachariegarniercuchet.github.io/LeREaDLabelizer/](https://zachariegarniercuchet.github.io/LeREaDLabelizer/)
 2. **Upload your HTML file** (drag-and-drop or click to browse)
 3. **Create your label schema** or continue from a previously labeled file
 4. **Select text and apply labels** using the context menu
@@ -218,8 +218,8 @@ Your label schema is saved directly in your HTML file as a comment. Here's an ex
 ## 💻 Local Development
 
 ```bash
-git clone https://github.com/zachariegarniercuchet/HTMLLabelizer.git
-cd HTMLLabelizer
+git clone https://github.com/zachariegarniercuchet/LeREaDLabelizer.git
+cd LeREaDLabelizer
 ```
 
 Open `index.html` in your browser — no server required!
@@ -235,7 +235,7 @@ If you use HTML Labelizer in your research, please cite:
   author       = {Zacharie Garnier-Cuchet},
   title        = {HTML Labelizer: A lightweight web-based tool for structured HTML annotation},
   year         = {2025},
-  howpublished = {\url{https://zachariegarniercuchet.github.io/HTMLLabelizer/}},
+  howpublished = {\url{https://zachariegarniercuchet.github.io/LeREaDLabelizer/}},
 }
 ```
 
@@ -249,4 +249,4 @@ MIT License — free to use and improve.
 
 ## 🆘 Support
 
-For questions or issues, please visit the [GitHub repository](https://github.com/zachariegarniercuchet/HTMLLabelizer) or open an issue.
+For questions or issues, please visit the [GitHub repository](https://github.com/zachariegarniercuchet/LeREaDLabelizer) or open an issue.
